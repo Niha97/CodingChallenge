@@ -1,0 +1,59 @@
+.App{
+  width:100%;
+  margin: auto;
+  text-align: center;
+}
+
+
+.title{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  word-spacing: 0.2em;
+  margin: 50px;
+}
+
+.inputGroup{
+  display: inline-flex;
+  margin:auto;
+
+  
+}
+
+input{
+  width:35px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgb(172, 156, 156);
+  color: gray;
+  opacity: 0.6;
+  border-radius: 5px;
+  letter-spacing: 0.1em;
+  font-style: italic;
+}
+
+button{
+  margin: 20px;
+  padding: 10px;
+  width: 70px;
+  border-radius: 5px;
+  border:none;
+  letter-spacing: 0.1em;
+  color:white;  
+}
+
+.start{
+  background: linear-gradient(top, #49c0f0, #2CAFE3);
+}
+.stop{
+  background: linear-gradient(top, #f62b2b, #d20202);
+}
+
+.reset{
+  background: linear-gradient(top, #4ba614, #008c00);
+}
+
+.without::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
