@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-
-  state = {
-    hours: 0,
-    minutes: 0,
-    seconds:0
+  constructor() {
+    super();
+    this.state = {
+      hours: 0,
+      minutes: 0,
+      seconds:0
+    }
+    this.hoursInput = React.createRef();
+    this.minutesInput= React.createRef();
+    this.secondsInput = React.createRef();
   }
 
   inputHandler = (e) => {
-    e.stopPropagation();
     this.setState({[e.target.name]: e.target.value});
   }
 
@@ -62,9 +66,9 @@ class App extends Component {
       minutes: 0,
       seconds: 0
     });
-    this.hoursInput.value = 0;
-    this.minutesInput.value = 0;
-    this.secondsInput.value = 0;
+    this.hoursInput.current.value = 0;
+    this.minutesInput.current.value = 0;
+    this.secondsInput.current.value = 0;
   }
 
 
@@ -76,11 +80,11 @@ class App extends Component {
          <h1 className="title"> (( React Countdown )) </h1>
          <div className="inputGroup">
             <h3>Hrs</h3>
-            <input ref={el => this.hoursInput = el} type="number" placeholder={0}  name="hours"  onChange={this.inputHandler} />
+            <input ref={this.hoursInput} type="number" placeholder={0}  name="hours"  onChange={this.inputHandler} />
             <h3>Min</h3>
-            <input  ref={el => this.minutesInput = el} type="number"  placeholder={0}   name="minutes"  onChange={this.inputHandler} />
+            <input  ref={this.minutesInput} type="number"  placeholder={0}   name="minutes"  onChange={this.inputHandler} />
             <h3>Sec</h3>
-            <input   ref={el => this.secondsInput = el} type="number"  placeholder={0}  name="seconds"  onChange={this.inputHandler} />
+            <input   ref={this.secondsInput} type="number"  placeholder={0}  name="seconds"  onChange={this.inputHandler} />
          </div>
          <div>
             <button onClick={this.startTimer} className="start">start</button>
